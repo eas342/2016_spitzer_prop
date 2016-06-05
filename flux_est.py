@@ -26,6 +26,8 @@ def get_fl(system='kic1255',renormBand='Kmag'):
     # Get the IRAC bandpasses
     iracdir = os.path.join(os.environ['TEL_DATA'],'irac')
     irac45 = S.FileBandpass(os.path.join(iracdir,'irac_45_ang.txt'))
+    irac36 = S.FileBandpass(os.path.join(iracdir,'irac_36_ang.txt'))
+    iracnames = ['IRAC 3.6um', 'IRAC 4.5um']
     
     # Renormalize spectrum
     if renormBand == 'Kmag':
@@ -36,11 +38,12 @@ def get_fl(system='kic1255',renormBand='Kmag'):
         renormMag = Jmag
     
     sp_norm = sp.renorm(renormMag,'vegamag',renormBandpass)
-    obs = S.Observation(sp_norm,irac45)
     
-    ## Get the flux at the wavelegnth
-    stim = obs.effstim('uJy')
-    print "Flux at 4.5um is "+str(stim)+" uJy"
+    for iracInd, iracBP in enumerate([irac36,irac45]):
+        obs = S.Observation(sp_norm,iracBP)    
+        ## Get the flux at the wavelegnth
+        stim = obs.effstim('uJy')
+        print "Flux for "+iracnames[iracInd]+" is "+str(stim)+" uJy"
     
     
     
