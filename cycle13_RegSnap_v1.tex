@@ -95,7 +95,6 @@
 \subsection{Science Justification}
 
 \noindent {\bf Disintegrating Bodies - A New Class of Planets}\\
-
 The Kepler Observatory has ushered in a new era of planet discovery and characterization, and dramatically increased the inventory of known planets and planet candidates.
 One of the fascinating new classes of planets uncovered by the Kepler observatory is that of disintegrating rocky bodies,
 including KIC 12557548b \citep{rappaport}, KOI 2700b \citep{rappaport2014KOI2700}, K2-22b \citep{sanchis-ojedak2-22}, WD 1145+017 \citep{vanderburg2015wdDisintegrating} and KIC 8462852 \citep{boyajian846}.
@@ -105,7 +104,6 @@ We therefore focus on these two disintegrating systems KIC 1255b  and K2-22b for
 \textbf{Disintegrating systems offer a rare opportunity to study planets that have been peeled away layer by layer}, and complement studies of white dwarfs, which are sensitive to the bulk compositions of accreted planetesimals \cite[e.g.][]{jura2003wdPollution}.\newline
 
 \noindent {\bf Particle Size and Composition}\\
-
 The K2-22b and KIC 1255b systems show broadband flux decreases that likely comes from the scattering of dust particles -- gas absorption from atomic or ionized gas would not have enough opacity to create the large broadband transits observed by Kepler photometry \citep[0.42 $\mu$m to 0.90 $\mu$m bandpass;][]{koch2010keplerChar}.
 The creation and/or destruction of dust particles cause variable transit depths, shown in Figure \ref{fig:exKeplerCurves}.
 The transit depths can vary from $\sim$0\% (undetected) to 1.3\% depending on the level of disintegration activity.
@@ -115,13 +113,12 @@ The particle sizes and composition of the debris escaping these disintegrating b
 \citet{bochinski2015evolving} find that the spectral slope of KIC 1255b spectrum changes between two nights and that the spectral slope between the $u'$, $g'$ and $z'$ bands was flatter during a shallow transit than a deeper transit. 
 \cite{sanchis-ojedak2-22} find that the spectral slope of K2-22b also shows a steeper spectral slope during a deeper $\sim 0.8\%$ event whereas a flat spectrum during a shallow $\sim$ 0.4\% event.
 The slope of the transmission spectra for these disintegrating bodies is sensitive to particle size with a steep spectral slope indicating small particle sizes and a shallow spectral slope indicating large particle sizes.
+
 We aim to measure the particle sizes of the debris using 4.5$\mu$m photometry to characterize the particle sizes of the debris, to higher precision than has been achieved with ground-based optical data.
 So far, there is only a lower limit on the particle sizes during medium and shallow transits.
 A lower limit of $\sim$0.5$\mu$m was placed on the dust particle sizes for both medium depth depth transits of KIC 1255b using simultaneous $K$ band (2.4$\mu$m) and Kepler broadband (0.42 to 0.90$\mu$m ) photometry \citep{croll2014}.
 Similarly, \citep{schlawin2016kic1255} find a lower limit of 0.5$\mu$m sized grains for olivine and pyroxene compositions using low resolution near-infrared spectroscopy (0.9 to 2.4$\mu$m) and optical photometry \citep{schlawin2016kic1255}.
 \textbf{Spitzer IRAC photometry is needed to study the large ($0.5\mu$m) dust particle escaping from KIC 1255b and K2-22b.}\newline
-
-
 
 %\noindent {\bf Underlying Planet}\\
 %
@@ -131,8 +128,24 @@ Similarly, \citep{schlawin2016kic1255} find a lower limit of 0.5$\mu$m sized gra
 %In the event of weak disintegration activity and small particle sizes, Spitzer photometry can put new constraints on the size of the planet \newline
 
 \noindent {\bf Tail Geometries}\\
-
 The K2-22 and KIC 1255 systems are interesting to compare and contrast because they display many of the same stochastic transit depth behaviors, but have different transit profiles.
+KIC 1255b and K2-22b have orbital periods of 9.1 and 15.7 hours respectively, but have about the same 2100 K equilibrium temperature because of K2-22b's cooler host star \citep{sanchis-ojedak2-22}.
+The transit profile for KIC 1255b is highly asymmetric, suggesting a comet-like tail trailing the planet whereas K2-22b is more symmetric, shown in Figure \ref{fig:TransitProfiles}.
+For K2-22b, the material appears to exhibiting Roche-lobe overflow onto the host star.
+We will explore the effect of particle sizes on these two different geometries for the two systems.
+\newline
+
+\noindent {\bf Transit Variability}\\
+One of the great challenges of disintegrating planet systems is that the transit depths are wildly stochastic and unpredictable, as shown in Figure \ref{fig:exKeplerCurves}.
+Our observing program requires that at least 3 transits be observed for a given target to ensure that sufficiently deep transits will be observed.
+Table \ref{tab:probabilities} shows if 3 transits are observed for each system, there is more than a 98\% chance of observing a transit with a depth at least 0.3\%, which can place strong constraints on the size of particles escaping K2-22b. and KIC 12557548b.\newline
+
+\noindent {\bf Coordinated Simultaneous Observations}\\
+It is essential to make simultaneous observations with Spitzer at shorter wavelengths in order to measure the transmission spectral energy distribution of the dust grains escaping K2-22b and KIC 1255b.
+As discussed in the Science Justification, the spectral slope of the grains reveals the particle size distribution.
+We therefore include only times that can be observed simultaneously with ground-based 
+Our team has extensive experience with ground-based observatories through Carnegie observatories, CFHT and the University of Arizona as well as a strong track record of obtaining time on telescopes for time series observations.\newline
+%We have a Cycle 24 HST proposal submitted to observe the same targets with a near-infrared grism.
 
 
 %The panels have broad scientific expertise.  Include background 
@@ -169,6 +182,104 @@ The K2-22 and KIC 1255 systems are interesting to compare and contrast because t
 
 \subsection{Technical Justification}
 
+\noindent {\bf Time Critical Requirements}\\
+Our observations are \textbf{time critical} and must occur during transit so we refer to the ephemerides in Observation Summary.
+Furthermore, there have been quiescent periods observed for KIC 1255b of about ~30 days in duration \citep{vanWerkhoven2014}.
+We request that the transit observations are separated by 30 days to ensure that they don not fall within quiescent period where all transit depths may be shallow ($< \sim 0.2\%$ depth).
+\newline
+
+\noindent {\bf Signal To Noise}\\
+Both planet systems would benefit from the long leaver arm of 4.5$\mu$m photometric measurements. However, signal to noise considerations limit the KIC 1255 observations to the 3.6 $\mu$m band.
+We use \texttt{pysynphot} with Phoenix stellar models and Simbad K magnitudes to calculate a 3.6 $\mu$m IRAC flux of 1.4 mJy for KIC 12557548.
+Similarly, we find 3.3 mJy for K2-22 in the 4.5$\mu$m band.
+We plugged these values into the time series calculator, \texttt{snirac\_warm}.
+For the background fluxes, we use average values provided by Spot of 0.6 MJy/sr for the 4.5$\mu$m band for K2-22 and 0.06 MJy/sr for the 3.6$\mu$m band for KIC 12557548.
+In an optimistic case, we can obtain a SNR of 10,000 in 20 minutes of integration for K2-22 and 5,500 for 20 minutes of integration for KIC 1255758b.
+Even when scaling down the SNR by a factor of 2 discussed in the \texttt{snirac\_warm} documentation, small transit events (0.2\% deep) are detectable at a 5.5 $\sigma$ level for KIC 1255b and 10 $\sigma$ for K2-22b.
+
+The targets in this program are bright enough that confusion limits are not going to present an issue and any astrophysical background will be subtracted out with the aperture photometry and time series baseline. K2-22 has nearby companion star at 1.9'' that will blend the source star, but this can be calculated for using the photometry from Adaptive Optics measurements \citep{sanchis-ojedak2-22}.\newline
+
+%This section contains the technical details for your program. 
+%The Technical Justification should contain details of your planned observations, 
+%descriptions of scheduling constraints, data analysis plans and a 
+%description of how the technical details were validated. For proposals that 
+%include generic targets or targets of opportunity, this section should also 
+%include a discussion of the provenance and availability of the 
+%proposed targets.\newline
+%
+%Note that you do NOT need to cut-and-paste the AORs into your
+%proposal; you submit your proposal using Spot, and the AORs in
+%the AOR window when you submit are the ones attached to your
+%proposal.  If you accidentally submit the wrong ones, don't worry;
+%you can update your proposal as often as you want before
+%the deadline.\newline
+%
+%Make your plans clear by summarizing information in tables
+%and using the Observation Summary Table (section 3) to your advantage.\newline
+%
+%Include brightness estimates 
+%for your targets; for example, see the Observation Summary Table
+%in section 3.  Based on those brightness estimates, include
+%your estimate and justification of what kind of S/N values you
+%need to accomplish your science.  Finally, include your
+%assessment of background levels (based on Spot, ISSA plates,
+%etc.) and explain (if necessary) how you can see your targets
+%despite the background. You should include numbers from the 
+%online SENS-PET (using the appropriate background setting) 
+%that justify going as deeply (or as shallowly) as you have.\newline
+
+%You should explain why you don't need to worry
+%about confusion limits or saturation limits, as appropriate, or
+%(alternatively) why you think you can get around these limits.\newline
+\noindent {\bf Observing and Reduction Strategy}\\
+We have followed the Time Series strategies suggested on the Spitzer website.
+These include PCRS peakups to place the source on a detector ``sweet-spot'' that has been well characterized and calibrated.
+We have included 30 minutes of dithered observations preceding the time series to help stabilize and settle the telescope prior to collecting science data.
+For the science frames, we are using repeats rather than dithers because we are doing time series
+monitoring and wish to place our object on the same part of the
+array.
+
+%Justify any use of low-impact Target of Opportunity observations. \newline
+%
+%If you have many targets, you may wish to include a separate 
+%table rather than a text summary here. Organize the
+%table in whatever way makes the most sense to you.   
+%Please note: this table is NOT the Observation
+%Summary Table described in the CP and below.  \newline
+%
+%You can also put information about backgrounds or expected target 
+%fluxes (or both) into the Observation Summary Table (section
+%3), because the Observation Summary Table does not have page
+%limits.  \newline
+%
+%Be sure to include here a detailed assessment of duplications and 
+%constraints, just {\em summaries} of which are placed in
+%sections 5 and 6.\newline
+Our observing team has extensive experience with high precision ground-based photometry and spectroscopy. 
+We will process with time series data with these existing pipelines as well as consult with other exoplanet scientists who have analyzed secondary eclipses, transits and phase curves with the IRAC warm mission.
+The many systematics present in Spitzer light curves should significantly impact our science case since the debris escaping these disintegrating planets has a much larger surface area than the atmospheres of planets typically probed with transit observations.
+%
+%Finally, have a detailed description of how you will handle the
+%data you get, and who will do what from the list of Co-Is.  You
+%might want a description of who will lead the entire effort, and
+%any additional management discussion for large collaborations. 
+
+\clearpage
+\subsection{Figures, Tables \& References}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{kepler_lightc_variable.png}
+\caption{Example lightcurves for KIC 1255b (left) and K2-22b (right) from the Kepler Observatory. The transits are periodic, but highly variable depth, suggesting that the planets are disintegrating into tails of dusty effluents.}\label{fig:exKeplerCurves}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{transit_profiles.png}
+\caption{Transit profiles for KIC 1255b (left) and K2-22b (right) from the Kepler Observatory phased to their respective periods. KIC 1255b has a highly asymmetric transit profile, likely coming from a comet-like tail trailing the planet at higher semi-major axes. K2-22b is more symmetric and so it likely has both a leading and trailing tails of dusty debris. We will measure particle size distributions to contrast these two planet candidate systems.}\label{fig:TransitProfiles}
+\end{figure}
+
+
 \begin{table}[htbp]
    \centering
    %\topcaption{Table captions are better up top} % requires the topcapt package
@@ -181,106 +292,6 @@ The K2-22 and KIC 1255 systems are interesting to compare and contrast because t
    \caption{\textbf{Insert Same Table 1 from the HST Proposal.}}
    \label{tab:probabilities}
 \end{table}
-
-\noindent {\bf Time Critical Requirements}\\
-
-Our observations are \textbf{time critical} and must occur during transit so we refer to the ephemerides in Observation Summary.
-Furthermore, there have been quiescent periods observed for KIC 1255b of about ~30 days in duration \citep{vanWerkhoven2014}.
-We request that the transit observations are separated by 30 days to ensure that they don't all fall within quiescent period where all transit depths are shallow.
-\newline
-
-\noindent {\bf Signal To Noise}\\
-
-This section contains the technical details for your program. 
-The Technical Justification should contain details of your planned observations, 
-descriptions of scheduling constraints, data analysis plans and a 
-description of how the technical details were validated. For proposals that 
-include generic targets or targets of opportunity, this section should also 
-include a discussion of the provenance and availability of the 
-proposed targets.\newline
-
-Note that you do NOT need to cut-and-paste the AORs into your
-proposal; you submit your proposal using Spot, and the AORs in
-the AOR window when you submit are the ones attached to your
-proposal.  If you accidentally submit the wrong ones, don't worry;
-you can update your proposal as often as you want before
-the deadline.\newline
-
-Make your plans clear by summarizing information in tables
-and using the Observation Summary Table (section 3) to your advantage.\newline
-
-Include brightness estimates 
-for your targets; for example, see the Observation Summary Table
-in section 3.  Based on those brightness estimates, include
-your estimate and justification of what kind of S/N values you
-need to accomplish your science.  Finally, include your
-assessment of background levels (based on Spot, ISSA plates,
-etc.) and explain (if necessary) how you can see your targets
-despite the background. You should include numbers from the 
-online SENS-PET (using the appropriate background setting) 
-that justify going as deeply (or as shallowly) as you have.\newline
-
-You should explain why you don't need to worry
-about confusion limits or saturation limits, as appropriate, or
-(alternatively) why you think you can get around these limits.\newline
-
-Explain the observation strategy you decided upon for your
-program, as well as the reasons for it.  For example, ``We
-created several small IRAC tiles to cover the region of
-interest and constrained them loosely with a `group within'
-constraint in order to cover the same area regardless of
-rotation angle.''  The proposal should include something about
-the AOR status, e.g., ``We are submitting final AORs for this
-program,''  or, based on instructions in the CP, perhaps
-instead, ``Because this is a large proposal, we are only
-submitting representative AORs for this program and will need to
-submit final AORs after the program is accepted.'' \newline
-
-If relevant, include a discussion of the bright objects that
-your observation covers (as defined via Spot's bright object
-overlay), and include specific justification as to why you
-want to do this observation anyway.\newline
-
-Consult the ``Best Observing
-Practices'' sections in the Spitzer Observer's Manual $-$ Warm Mission
-(Warm SOM). You should include an explanation of anything that you 
-want to do that is contrary to these ``Best Observing Practices.''  For
-example, the Best Observing Practices recommends dithers rather
-than repeats, so you might write, ``We are using 
-repeats rather than dithers because we are doing time series
-monitoring and wish to place our object on the same part of the
-array.''\newline
-
-Justify any use of low-impact Target of Opportunity observations. \newline
-
-If you have many targets, you may wish to include a separate 
-table rather than a text summary here. Organize the
-table in whatever way makes the most sense to you.   
-Please note: this table is NOT the Observation
-Summary Table described in the CP and below.  \newline
-
-You can also put information about backgrounds or expected target 
-fluxes (or both) into the Observation Summary Table (section
-3), because the Observation Summary Table does not have page
-limits.  \newline
-
-Be sure to include here a detailed assessment of duplications and 
-constraints, just {\em summaries} of which are placed in
-sections 5 and 6.\newline
-
-Finally, have a detailed description of how you will handle the
-data you get, and who will do what from the list of Co-Is.  You
-might want a description of who will lead the entire effort, and
-any additional management discussion for large collaborations. 
-
-\clearpage
-\subsection{Figures, Tables \& References}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth]{kepler_lightc_variable.png}
-\caption{Example lightcurves for KIC 1255b (left) and K2-22b (right) from the Kepler Observatory. The transits are periodic, but highly variable depth, suggesting that the planets are disintegrating into tails of dusty effluents.}\label{fig:exKeplerCurves}
-\end{figure}
 
 %Figures are an excellent way to convey information to your reviewers.
 %Captions, tables and references may be in 10-point font.  Figures and tables 
@@ -304,7 +315,7 @@ any additional management discussion for large collaborations.
 %\caption{Sample caption for another completely different but equivalent method of including figures.}
 %\end{figure*}
 
-
+\clearpage
 \noindent {\bf In addition to the Science Plan, the following 1-page section is required:}
 
 \section{Summary of Existing Programs}
@@ -365,14 +376,14 @@ Target & Position & Flux     & IRAC  & Int./ & AOR & \# of \\
 Field & (J2000)   & (mJy) & Band & Pixel & Duration & AORS \\
 & &  & ($\mu$m) & (secs) & (hr) & \\
 \hline \\ 
-KIC 12557548 & 19:23:51.9+51:30:17 & 1.4 & 3.6 & 2 & 5 & 3 \\
-K2-22 & 11:17:55.9+02:37:09 & 3.3 & 4.5 & 2 & 4 & 3 \\
+KIC 12557548 & 19:23:51.9+51:30:17 & 1.4 & 3.6 & 2 & 5.5 & 3 \\
+K2-22 & 11:17:55.9+02:37:09 & 3.3 & 4.5 & 2 & 4.5 & 3 \\
 \multicolumn{7}{c}{Each set of AORs is repeated 3 times} \\
 \hline \\
 \end{tabular}
 
 
-There are xx hrs total requested for this observing program.\newline
+There are 30 hrs total requested for this observing program.\newline
 
 %If joint time with HST or Chandra is also proposed, please summarize 
 %here how many orbits or kiloseconds of time are requested.
@@ -389,13 +400,13 @@ We request the standard proprietary period of 365 days.
 
 \section{Summary of Duplicate Observations}
 
-This section has no page limit. {\it Briefly} summarize the justification for 
-any proposed duplicate observation. The details should have been provided in the
-Science Plan.  Even if there are no duplicates, note this. Leopard should be 
-used to find any duplications, including observations that used Instrument
-Engineering Requests (IERs), since such observations will not
-show up in Spot searches. More information can be found in the
-Leopard User's Guide.\newline
+%This section has no page limit. {\it Briefly} summarize the justification for 
+%any proposed duplicate observation. The details should have been provided in the
+%Science Plan.  Even if there are no duplicates, note this. Leopard should be 
+%used to find any duplications, including observations that used Instrument
+%Engineering Requests (IERs), since such observations will not
+%show up in Spot searches. More information can be found in the
+%Leopard User's Guide.\newline
 
 There are two programs that include imaging of the targets in this program.
 Program 10067 (PI M. Werner) and Program 11026 (PI M. Werner) both include imaging of the two targets in this program.
@@ -416,29 +427,29 @@ Therefore, this program is not a duplicate observation.
 
 \section{Summary of Scheduling Constraints/ToOs}
 
-This section has no page limit. Briefly summarize the justification for 
-any proposed scheduling constraints. 
-Also provide a summary of any ToO scheduling issues. 
-The details should have been provided in the Science Plan. Even if there 
-are no constraints or ToOs, note this.\newline
+%This section has no page limit. Briefly summarize the justification for 
+%any proposed scheduling constraints. 
+%Also provide a summary of any ToO scheduling issues. 
+%The details should have been provided in the Science Plan. Even if there 
+%are no constraints or ToOs, note this.\newline
 
-These observations are \textbf{time critical} and need to take place when K2-22b and KIC 1255b cross in front of their host stars .We provide an ephemeris below. For
+These observations are \textbf{time critical} and need to take place when K2-22b and KIC 1255b cross in front of their host stars .We provide an ephemeris below.
 
-\noindent Example:
-
-We have placed a loose group-within constraint, spanning 10 days,
-on our three AORs that cover the extended target XXX to 
-minimize field rotation in the large map that will be produced by the AORs.\newline
-
-\noindent or:\noindent 
-
-We will be requesting 1 low-impact ToO and we have indicated this in the 
-AORs.  We anticipate one new comet to be discovered this year that meets 
-our criteria as discussed in the Science Plan.\newline
-
-\noindent or:
-
-There are no scheduling constraints or ToOs in this program.
+%\noindent Example:
+%
+%We have placed a loose group-within constraint, spanning 10 days,
+%on our three AORs that cover the extended target XXX to 
+%minimize field rotation in the large map that will be produced by the AORs.\newline
+%
+%\noindent or:\noindent 
+%
+%We will be requesting 1 low-impact ToO and we have indicated this in the 
+%AORs.  We anticipate one new comet to be discovered this year that meets 
+%our criteria as discussed in the Science Plan.\newline
+%
+%\noindent or:
+%
+%There are no scheduling constraints or ToOs in this program.
 
 \end{document}
 
