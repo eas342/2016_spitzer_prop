@@ -4,7 +4,7 @@
  After downloading the source with git clone, you can compile a PDF on your machine by running
 
     pdflatex cycle13_RegSnap_v1
-    bibtex cycle13_RegSnap_v1
+    bibtex spitz13prop
     pdflatex cycle13_RegSnap_v1
     pdflatex cycle13_RegSnap_v1
 
