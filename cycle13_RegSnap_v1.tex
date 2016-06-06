@@ -185,7 +185,7 @@ Our team has extensive experience with ground-based observatories through Carneg
 \noindent {\bf Time Critical Requirements}\\
 Our observations are \textbf{time critical} and must occur during transit so we refer to the ephemerides in Observation Summary.
 Furthermore, there have been quiescent periods observed for KIC 1255b of about ~30 days in duration \citep{vanWerkhoven2014}.
-We request that the transit observations are separated by 30 days to ensure that they don not fall within quiescent period where all transit depths may be shallow ($< \sim 0.2\%$ depth).
+We request that the transit observations are separated by 30 days to ensure that they do not fall within quiescent period where all transit depths may be shallow ($< \sim 0.2\%$ depth).
 \newline
 
 \noindent {\bf Signal To Noise}\\
@@ -275,23 +275,39 @@ The many systematics present in Spitzer light curves should significantly impact
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{transit_profiles.png}
+\includegraphics[width=1.0\textwidth]{transit_profiles.png}
 \caption{Transit profiles for KIC 1255b (left) and K2-22b (right) from the Kepler Observatory phased to their respective periods. KIC 1255b has a highly asymmetric transit profile, likely coming from a comet-like tail trailing the planet at higher semi-major axes. K2-22b is more symmetric and so it likely has both a leading and trailing tails of dusty debris. We will measure particle size distributions to contrast these two planet candidate systems.}\label{fig:TransitProfiles}
 \end{figure}
 
+\begin{table*}[b]
+\centering
+%\vspace{-2.2in}
+\begin{tabular}{|c | c c c| c c c|} 
+\hline\hline 
 
-\begin{table}[htbp]
-   \centering
-   %\topcaption{Table captions are better up top} % requires the topcapt package
-   \begin{tabular}{@{} lcr @{}} % Column formatting, @{} suppresses leading/trailing space
-      \multicolumn{2}{c}{} \\
-      N   & KIC 1255b & K2-22b \\
-      \hline
-      1      & 90.6 & 94.6 \\
-   \end{tabular}
-   \caption{\textbf{Insert Same Table 1 from the HST Proposal.}}
-   \label{tab:probabilities}
-\end{table}
+	   	&     				& {\bf KIC 1255b}		&				&				& {\bf K2-22b}		&		  		\\
+  $N$   	&    $\delta$ $\ge$ 0.35\%	& $\delta$ $\ge$ 0.5\%		& $\delta$ $\ge$ 0.7\%		& $\delta$ $\ge$ 0.3\%		& $\delta$ $\ge$ 0.5\%		& $\delta$ $\ge$ 0.7\%		\\
+ 	   	&    $P$(\%), $C$($\sigma$)	& $P$(\%), $C$($\sigma$)	& $P$(\%), $C$($\sigma$)	& $P$(\%), $C$($\sigma$)	& $P$(\%), $C$($\sigma$)	& $P$(\%), $C$($\sigma$)		\\
+\hline 
+% \multicolumn{2}{c}{KIC 1255b}\\
+\hline
+	1	&	98.3, 3.0		& 90.6, 4.7 			& 66.2, 7.1			& 99.2, 3.5			& 94.6, 6.4			& 82.4, 7.9	\\
+	2	& 	84.0, 4.7		& 56.8, 7.1			& 22.0, 10.0			& 89.5, 5.3			& 68.0, 8.5			& 41.0, 10.6	\\
+	3	& 	41.7, 6.0		& 16.2, 8.2			& 2.8, 12.0			& 51.0, 6.7			& 24.1, 10.1			& 8.5, 13.4	\\
+
+\hline 
+\end{tabular}
+\caption{$P$ is the probability that at least $N$ of our three
+transits will have a transit depth $\delta$ equal or deeper than the given values, while
+$C$ is the expected confidence (in $\sigma$) that 0.1 $\mu m$ grains can be differentiated from 1.0 $\mu m$ grains
+for $N$ transits with at least the given depth.
+We should have a 98.3\% and 99.2\% chance of observing one transit deep enough to 
+differentiate 0.1 $\mu m$ grains from 1.0 $\mu m$ with $>$3$\sigma$ confidence
+for KIC 1255b and K2-22b, respectively.}
+\label{tab:probabilities}
+%\vspace{0.8in}
+\end{table*}
+
 
 %Figures are an excellent way to convey information to your reviewers.
 %Captions, tables and references may be in 10-point font.  Figures and tables 
