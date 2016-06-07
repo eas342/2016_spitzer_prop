@@ -194,13 +194,13 @@ We request that the transit observations are separated by 30 days to ensure that
 \newline
 
 \noindent {\bf Signal To Noise}\\
-Both planet systems would benefit from the long leaver arm of 4.5$\mu$m photometric measurements. However, signal to noise considerations limit the KIC 1255 observations to the 3.6 $\mu$m band.
-For consistency and because there is already evidence for wavelength dependence for K2-22b, we will observe both systems in the 3.6 $\mu$m band.
+Both planet systems would benefit from the long ``leaver arm'' of 4.5$\mu$m photometric measurements. However, signal to noise considerations limit the KIC 1255 observations to the 3.6 $\mu$m band.
+For consistency and because there is already evidence for wavelength dependence for K2-22b at short wavelengths, we will observe both systems in the 3.6 $\mu$m band.
 We used \texttt{pysynphot} with Phoenix stellar models and Simbad $K$ magnitudes to calculate a 3.6 $\mu$m IRAC flux of 1.4 mJy for KIC 1255 and 5.2 mJy for K2-22.
 We plugged these values into the time series calculator, \texttt{snirac\_warm}.
-For the background fluxes, we use average values provided by Spot of 0.6 MJy/sr for the 4.5$\mu$m band for K2-22 and 0.06 MJy/sr for the 3.6$\mu$m band for KIC 12557548.
-In an optimistic case, we can obtain a SNR of 10,000 in 20 minutes of integration for K2-22 and 5,500 for 20 minutes of integration for KIC 1255758b.
-Even when scaling down the SNR by a factor of 2 discussed in the \texttt{snirac\_warm} documentation, small transit events (0.2\% deep) are detectable at a 5.5 $\sigma$ level for KIC 1255b and 10 $\sigma$ for K2-22b.
+For the background fluxes, we use average values provided by Spot of 0.2 MJy/sr for K2-22 and 0.06 MJy/sr for the 3.6$\mu$m band for KIC 1255.
+In an optimistic case, we can obtain a SNR of 14,000 in 20 minutes of integration for K2-22 and 5,500 for 20 minutes of integration for KIC 1255.
+Even when scaling down the SNR by a factor of 2 discussed in the \texttt{snirac\_warm} documentation, small transit events (0.2\% deep) are detectable at a 5.5 $\sigma$ level for KIC 1255b and 14 $\sigma$ for K2-22b.
 
 The targets in this program are bright enough that confusion limits are not going to present an issue and any astrophysical background will be subtracted out with the aperture photometry and time series baseline. K2-22 has nearby companion star at 1.9'' that will blend the source star, but this can be accounted for using the photometry from Adaptive Optics measurements \citep{sanchis-ojedak2-22}.\newline
 
