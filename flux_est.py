@@ -1,5 +1,8 @@
 import pysynphot as S
 import os
+import matplotlib.pyplot as plt
+from astropy.io import ascii
+import pdb
 
 def get_fl(system='kic1255',renormBand='Kmag'):
     """ Get the fluxes"""
@@ -44,6 +47,23 @@ def get_fl(system='kic1255',renormBand='Kmag'):
         ## Get the flux at the wavelegnth
         stim = obs.effstim('uJy')
         print "Flux for "+iracnames[iracInd]+" is "+str(stim)+" uJy"
+    
+def make_phasep():
+    
+    filel = ['kic1255_phased_transit.txt','k2-22_phased_transit.txt']
+    fxrange = [[0,1],[0]]
+    plt.close()
+    fig, ax = plt.subplots(1,2)
+    for ind, onef in enumerate(filel):
+        dat = ascii.read(onef,names=['phase','flux','error','junk'],delimiter=' ',data_start=0)
+        dat['phase'] = dat['phase'] - 0.5 ## I like phase 0 as mid-"transit"
+        ax[ind].plot(dat['phase'],dat['flux'])
+        ax[ind].set_ylim(0.993,1.002)
+        ax[ind].set_xlim(-0.5,0.5)
+        ax[ind].set_xlabel('Orbital Phase')
+        ax[ind].set_ylabel('Normalized Flux')
+    
+    #plt.show()
     
     
     
