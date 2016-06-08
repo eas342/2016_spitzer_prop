@@ -2,7 +2,7 @@ Proposal.version= 6.0
 Proposal.proposalType= go
 Proposal.isTargetOfOpportunity= false
 Proposal.isThesis= false
-Proposal.requestedHours= 32.6
+Proposal.requestedHours= 31.6
 Proposal.period= 365
 #------------------------- Title -------------------------------------
 Proposal.title= \
