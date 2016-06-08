@@ -61,7 +61,7 @@ def make_phasep(dosim=False):
     repErrBar = [0.0005,0.0002  ]
     PPeriod = [0.6535538 * 24.,9.145872] ## hours, VanWerkhoven 2015, Sanchis-Ojeda 2015
     samTime = 0.17 ## sampling time for Error bar
-    obsTimes= [[-2.5,2.5],[-1.9,1.9]] ## Start and end times in hr
+    obsTimes= [[-3,2.5],[-2.4,1.9]] ## Start and end times in hr
     plt.close()
     fig, ax = plt.subplots(1,2,figsize=(9,3))
     #fig.set_size_inches(10, 6)
