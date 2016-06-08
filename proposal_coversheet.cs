@@ -46,14 +46,14 @@ Proposal.coi.0.firstName= Bryce
 Proposal.coi.0.lastName= Croll
 Proposal.coi.0.institute= Boston University
 Proposal.coi.0.email= croll@bu.edu
-Proposal.coi.1.firstName= Johanna
-Proposal.coi.1.lastName= Teske
-Proposal.coi.1.institute= Carnegie Institution of Washington
-Proposal.coi.1.email= jteske@carnegiescience.edu
-Proposal.coi.2.firstName= Saul
-Proposal.coi.2.lastName= Rappaport
-Proposal.coi.2.institute= MIT
-Proposal.coi.2.email= sar@mit.edu
+Proposal.coi.1.firstName= Saul
+Proposal.coi.1.lastName= Rappaport
+Proposal.coi.1.institute= MIT
+Proposal.coi.1.email= sar@mit.edu
+Proposal.coi.2.firstName= Johanna
+Proposal.coi.2.lastName= Teske
+Proposal.coi.2.institute= Carnegie Institution of Washington
+Proposal.coi.2.email= jteske@carnegiescience.edu
 Proposal.coi.3.firstName= Terry
 Proposal.coi.3.lastName= Herter
 Proposal.coi.3.institute= Cornell
@@ -71,19 +71,21 @@ Proposal.abstract= \
      The Kepler Observatory uncovered a new class of disintegrating planets.\
      \ These planets offer a way to study interior layers of exoplanets as th\
      ey are stripped down from larger radii. We will characterize the dusty \
-     effluents coming off two sibling disintegrating planets KIC 12557548b a\
-     nd K2-22b. The dust particles escaping these two planets are still larg\
-     ely a mystery in terms of composition and particle size. Spitzer photom\
-     etry will probe the larger dust particle sizes when combined with optic\
-     al ground-based data. We will measure the spectral slope between 0.6 um\
+     effluents coming off two sibling disintegrating planets: KIC 12557548b \
+     and K2-22b. The composition and particle sizes of the dust particles es\
+     caping these two planets are still largely unknown. Spitzer photometry \
+     will probe the larger dust particle sizes when combined with optical ph\
+     otometry. We will execute simultaneous ground-based optical observation\
+     s with the Spitzer photometry in order to study the dust tails at the e\
+     xact same epoch. We will measure the spectral slope between the optical\
      \ and 3.6 um to constrain the size of particles escaping the two planets\
-     . The geometry of the tails of debris escaping these two planets has a \
-     different shape -- we will compare the particles from the two planets t\
-     o assess the causes of the different geometry. Three transits are neede\
-     d to average over the intrinsic variability of these systems and ensure\
-     \ a deep enough transit occurs for detection. Any new wavelength informa\
-     tion on these planet candidates will dramatically increase our knowledg\
-     e as there remain many mysteries about their composition and what mecha\
-     nism causes the planet to lose mass.
+     . The tail of debris escaping KIC 12557548b is physically less symmetri\
+     c than for K2-22b -- we will compare the particles from the two planets\
+     \ to assess the cause of the different geometry. Three transits are need\
+     ed to average over the intrinsic variability of these systems and ensur\
+     e a deep enough transit occurs for detection. Any new wavelength inform\
+     ation on these planet candidates will dramatically increase our knowled\
+     ge as there remain many mysteries about their composition and what mech\
+     anisms cause the planets to lose mass.
 
 #------------------------- Extra Information --------------------------
