@@ -51,6 +51,8 @@
 \usepackage{natbib}
 \setlength{\bibsep}{0pt}
 \include{shortcuts}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 % Please update the following line with the title of your proposal
 % and your Author name (with "et al." if more than two authors).
@@ -198,7 +200,7 @@ The particle sizes can be used to constrain the mass loss rate of the system and
 \noindent {\bf Time Critical Requirements}\\
 Our observations are \textbf{time critical} and must occur during transit so we refer to the ephemerides in Observation Summary.
 Furthermore, there have been quiescent periods observed for KIC 1255b of about ~30 days in duration \citep{vanWerkhoven2014}.
-We request that the transit observations are separated by 30 days to ensure that they do not fall within quiescent period where all transit depths may be shallow ($< \sim 0.2\%$ depth).
+We request that the transit observations are separated by 30 days to ensure that they do not fall within quiescent period where all transit depths may be shallow ($\lesssim 0.2\%$ depth).
 \newline
 
 \noindent {\bf Signal To Noise}\\
@@ -289,16 +291,19 @@ The many systematics present in Spitzer light curves should significantly impact
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{transit_profiles.pdf}
-\caption{Transit profiles for KIC 1255b (left) and K2-22b (right) from the Kepler Observatory phased to their respective periods of 15.7 hr and 9.1 hr. KIC 1255b has a highly asymmetric transit profile, likely coming from a comet-like tail trailing the planet at higher semi-major axes.
-K2-22b is more symmetric and so it likely has both leading and trailing tails of dusty debris.
-We will measure particle size distributions to contrast these two planet candidate systems.
-Representative error bars are shown with twice the error predicted by \texttt{snirac\_warm} and are binned to 10 minutes for clarity.}\label{fig:TransitProfiles}
+\caption{Transit profiles for KIC 1255b (left) and K2-22b (right) from the Kepler Observatory phased to their respective periods of 15.7 hr and 9.1 hr are overlaid with simulated Spitzer data with twice the error predicted by \texttt{snirac\_warm}. KIC 1255b has a highly asymmetric transit profile, likely coming from a comet-like tail trailing the planet at higher semi-major axes.
+K2-22b is more symmetric and so it likely has both leading and trailing tails of dusty debris.}\label{fig:TransitProfiles}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.55\textwidth]{particle_size_constraints.png}
-\caption{The ratio between optical (0.6$\mu$m) and infrared (3.6$\mu$m) cross section (a proxy for transit depth) is plotted as a function of particle size for Corundum grains. We will measure this ratio with Spitzer 3.6$\mu$m and simultaneous ground-based photometry. \textbf{This combination of optical/infrared photometry will measure the particle sizes of dusty debris of disintegrating planets out to particle sizes of $\sim$1.5 $\mu$m for the first time.}}\label{fig:SizeConstraints}
+\includegraphics[width=0.55\textwidth]{particle_size_constraints.pdf}
+\caption{The ratio between infrared (3.6 $\mu$m) and optical (0.6 $\mu$m) cross sections (a proxy for transit depth ratios) is plotted as a function of median particle size for dust grains of three common minerals.
+The cross section ratio curves have been convolved with an assumed log-normal particle size distribution with a width of 2. 
+We will measure this ratio with Spitzer 3.6 $\mu$m and simultaneous ground-based photometry.
+We know from prior ground-based measurements that small particles (i.e., $\lesssim 0.1 \, \mu$m) are ruled out.  
+For larger particles, the plot shows how, with increasing median particle size, the transit depth ratio (Spitzer/optical) should go from essentially zero for median particle sizes of $0.3 \, \mu$m to a factor of 1.3 less than optical at $1 \, \mu$m (marked with a vertical blue line), to essentially equal transit depths by $2 \, \mu$m. 
+This combination of infrared/optical photometry will, for the first time, allow us to determine the median particle sizes of dusty debris of disintegrating planets up to particle sizes of $\sim$$1.5-2 \,\mu$m.}\label{fig:SizeConstraints}
 \end{figure}
 
 \begin{table*}[b]
