@@ -3,6 +3,8 @@ import os
 import matplotlib.pyplot as plt
 from astropy.io import ascii
 import pdb
+import numpy as np
+from numpy.random import RandomState
 
 def get_fl(system='kic1255',renormBand='Kmag'):
     """ Get the fluxes"""
@@ -48,21 +50,53 @@ def get_fl(system='kic1255',renormBand='Kmag'):
         stim = obs.effstim('uJy')
         print "Flux for "+iracnames[iracInd]+" is "+str(stim)+" uJy"
     
-def make_phasep():
-    
+def make_phasep(dosim=False):
+    """
+    Plots the light curves either for Phased Kepler data or simulated Spitzer data
+    """
     filel = ['kic1255_phased_transit.txt','k2-22_phased_transit.txt']
+    pname = ['KIC 1255','K2-22']
     fxrange = [[0,1],[0]]
+    randomseeds = [232,110]
+    repErrBar = [0.0005,0.0002  ]
+    PPeriod = [0.6535538 * 24.,9.145872] ## hours, VanWerkhoven 2015, Sanchis-Ojeda 2015
+    samTime = 0.17 ## sampling time for Error bar
     plt.close()
-    fig, ax = plt.subplots(1,2)
+    fig, ax = plt.subplots(1,2,figsize=(9,3))
+    #fig.set_size_inches(10, 6)
     for ind, onef in enumerate(filel):
         dat = ascii.read(onef,names=['phase','flux','error','junk'],delimiter=' ',data_start=0)
+        
         dat['phase'] = dat['phase'] - 0.5 ## I like phase 0 as mid-"transit"
-        ax[ind].plot(dat['phase'],dat['flux'])
+        
+        if dosim == True:
+            pcolor, ptype = 'blue', '-'
+        else:
+            pcolor, ptype = 'black', '-'
+        ax[ind].plot(dat['phase'],dat['flux'],color=pcolor,linestyle=ptype)
         ax[ind].set_ylim(0.993,1.002)
         ax[ind].set_xlim(-0.5,0.5)
         ax[ind].set_xlabel('Orbital Phase')
-        ax[ind].set_ylabel('Normalized Flux')
-    
+        if ind == 0:
+            ax[ind].set_ylabel('Normalized Flux')
+        ax[ind].text(0.18, 0.997, pname[ind],fontweight='bold')
+
+        ## Show the normalization
+        ax[ind].plot([-0.5,0.5],[1,1],linestyle='--',color='green')
+
+        if dosim == True:
+            prng = RandomState(randomseeds[ind])
+            timeArr = np.arange(-0.5,0.5,samTime / PPeriod[ind])
+            npoint = timeArr.shape[0]
+            error = repErrBar[ind] * np.ones(npoint)
+            simdata = (np.interp(timeArr,dat['phase'],dat['flux']) + 
+                       prng.randn(npoint) * repErrBar[ind])
+            ax[ind].errorbar(timeArr,simdata,error,fmt='o',alpha=0.4,color='red',
+                             markersize=4)
+            
+    plt.tight_layout()
+    outname = 'transit_profiles.pdf'
+    fig.savefig(outname)
     #plt.show()
     
     
