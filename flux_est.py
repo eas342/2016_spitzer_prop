@@ -56,11 +56,12 @@ def make_phasep(dosim=False):
     """
     filel = ['kic1255_phased_transit.txt','k2-22_phased_transit.txt']
     pname = ['KIC 1255','K2-22']
-    fxrange = [[0,1],[0]]
+
     randomseeds = [232,110]
     repErrBar = [0.0005,0.0002  ]
     PPeriod = [0.6535538 * 24.,9.145872] ## hours, VanWerkhoven 2015, Sanchis-Ojeda 2015
     samTime = 0.17 ## sampling time for Error bar
+    obsTimes= [[-2.5,2.5],[-1.9,1.9]] ## Start and end times in hr
     plt.close()
     fig, ax = plt.subplots(1,2,figsize=(9,3))
     #fig.set_size_inches(10, 6)
@@ -86,7 +87,8 @@ def make_phasep(dosim=False):
 
         if dosim == True:
             prng = RandomState(randomseeds[ind])
-            timeArr = np.arange(-0.5,0.5,samTime / PPeriod[ind])
+            timeArr = np.arange(obsTimes[ind][0]/PPeriod[ind],obsTimes[ind][1]/PPeriod[ind],
+                                samTime / PPeriod[ind])
             npoint = timeArr.shape[0]
             error = repErrBar[ind] * np.ones(npoint)
             simdata = (np.interp(timeArr,dat['phase'],dat['flux']) + 
